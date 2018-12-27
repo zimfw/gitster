@@ -6,9 +6,13 @@
 # Requires the `git-info` zmodule to be included in the .zimrc file.
 
 prompt_gitster_pwd() {
-  prompt_short_dir=$(short_pwd)
-  git_root=$(command git rev-parse --show-toplevel 2> /dev/null) && prompt_short_dir=${prompt_short_dir#${$(short_pwd $git_root):h}/}
-  print -n "%F{white}${prompt_short_dir}"
+  local git_root current_dir
+  if git_root=$(command git rev-parse --show-toplevel 2>/dev/null); then
+    current_dir="${PWD#${git_root:h}/}"
+  else
+    current_dir="${PWD/#${HOME}/~}"
+  fi
+  print -n "%F{white}${current_dir}"
 }
 
 prompt_gitster_git() {

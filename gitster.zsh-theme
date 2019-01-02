@@ -15,16 +15,12 @@ prompt_gitster_pwd() {
   print -n "%F{white}${current_dir}"
 }
 
-prompt_gitster_git() {
-  [[ -n ${git_info} ]] && print -n "${(e)git_info[prompt]}"
-}
-
 prompt_gitster_precmd() {
   (( ${+functions[git-info]} )) && git-info
 }
 
 prompt_gitster_setup() {
-  local prompt_gitster_status='%(?:%F{green}:%F{red})➜ '
+  local status='%(?:%F{green}:%F{red})➜ '
 
   autoload -Uz add-zsh-hook && add-zsh-hook precmd prompt_gitster_precmd
 
@@ -37,7 +33,7 @@ prompt_gitster_setup() {
   zstyle ':zim:git-info:keys' format \
     'prompt' ' %F{cyan}%b%c %C%D'
 
-  PS1="${prompt_gitster_status}\$(prompt_gitster_pwd)\$(prompt_gitster_git)%f "
+  PS1="${status}\$(prompt_gitster_pwd)\${(e)git_info[prompt]}%f "
   RPS1=''
 }
 

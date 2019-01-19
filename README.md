@@ -14,14 +14,6 @@ What does it show?
     ['detached HEAD' state](http://gitfaq.org/articles/what-is-a-detached-head.html).
   * Yellow `✗` when in a dirty git working tree, green `✓` when in a clean one.
 
-Usage
------
-
-If you enabled Zim's [`prompt`](https://github.com/zimfw/prompt) module, you can
-set this as your default theme with the following zstyle:
-
-    zstyle ':zim:prompt' theme 'gitster'
-
 Requirements
 ------------
 

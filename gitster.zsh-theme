@@ -15,7 +15,7 @@ _prompt_gitster_pwd() {
   print -n "%F{white}${current_dir}"
 }
 
-setopt nopromptbang promptcr promptpercent promptsp promptsubst
+setopt nopromptbang prompt{cr,percent,sp,subst}
 
 typeset -gA git_info
 if (( ${+functions[git-info]} )); then

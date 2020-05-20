@@ -3,7 +3,7 @@ gitster
 
 A fork of shashankmehta's [gitster] theme.
 
-![gitster theme]
+<img width="706" src="https://zimfw.github.io/images/prompts/gitster@2.png">
 
 What does it show?
 ------------------
@@ -19,6 +19,5 @@ Requirements
 Requires Zim's [git-info] module to show git information.
 
 [gitster]: https://github.com/shashankmehta/dotfiles/blob/master/thesetup/zsh/.oh-my-zsh/custom/themes/gitster.zsh-theme
-[gitster theme]: https://zimfw.github.io/images/prompts/gitster.png
 ['detached HEAD' state]: http://gitfaq.org/articles/what-is-a-detached-head.html
 [git-info]: https://github.com/zimfw/git-info

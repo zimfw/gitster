@@ -10,7 +10,7 @@ _prompt_gitster_pwd() {
   if git_root=$(command git rev-parse --show-toplevel 2>/dev/null); then
     current_dir="${PWD#${git_root:h}/}"
   else
-    current_dir="${PWD/#${HOME}/~}"
+    current_dir=${(%):-%~}
   fi
   print -n "%F{white}${current_dir}"
 }

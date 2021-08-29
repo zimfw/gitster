@@ -3,19 +3,11 @@
 # Gitster theme
 # https://github.com/shashankmehta/dotfiles/blob/master/thesetup/zsh/.oh-my-zsh/custom/themes/gitster.zsh-theme
 #
-# Requires the `git-info` zmodule to be included in the .zimrc file.
-
-_prompt_gitster_pwd() {
-  local git_root current_dir
-  if git_root=$(command git rev-parse --show-toplevel 2>/dev/null); then
-    current_dir="${PWD#${git_root:h}/}"
-  else
-    current_dir=${(%):-%~}
-  fi
-  print -n "%F{white}${current_dir}"
-}
+# Requires the `prompt-pwd` and `git-info` zmodules to be included in the .zimrc file.
 
 setopt nopromptbang prompt{cr,percent,sp,subst}
+
+zstyle ':zim:prompt-pwd' git-root yes
 
 typeset -gA git_info
 if (( ${+functions[git-info]} )); then
@@ -29,5 +21,5 @@ if (( ${+functions[git-info]} )); then
   autoload -Uz add-zsh-hook && add-zsh-hook precmd git-info
 fi
 
-PS1='%(?:%F{green}:%F{red})➜ $(_prompt_gitster_pwd)${(e)git_info[prompt]}%f '
+PS1='%(?:%F{green}:%F{red})➜ %F{white}$(prompt-pwd)${(e)git_info[prompt]}%f '
 unset RPS1

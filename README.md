@@ -16,28 +16,37 @@ What does it show?
 Advanced settings
 -----------------
 
-This theme can customized by changing the following git-info module context
-formats, after the theme has been initialized:
+You can customize how the current working directory is shown with the
+[prompt-pwd module settings].
 
-| Context name | Description       | Default value |
-| ------------ | ----------------- | ------------- |
-| branch       | Branch name       | `%b`          |
-| commit       | Commit short hash | `%c`          |
-| clean        | Clean state       | `%F{green}✓`  |
-| dirty        | Dirty state       | `%F{yellow}✗` |
+The git indicators can customized by changing the following git-info module
+context formats:
 
-Use the following command to change the value of a context format:
+| Context name | Description       | Default format |
+| ------------ | ----------------- | -------------- |
+| branch       | Branch name       | `%b`           |
+| commit       | Commit short hash | `%c`           |
+| clean        | Clean state       | `%F{green}✓`   |
+| dirty        | Dirty state       | `%F{yellow}✗`  |
 
-    zstyle ':zim:git-info:<context_name>' format '<new_value>'
+Use the following command to override a git-info context format:
 
-For detailed information, check the [git-info documentation].
+    zstyle ':zim:git-info:<context_name>' format '<new_format>'
+
+For detailed information about these and other git-info settings, check the
+[git-info documentation].
+
+These advanced settings must be overridden after where the theme is initialized.
 
 Requirements
 ------------
 
-Requires Zim's [git-info] module to show git information.
+Requires Zim's [prompt-pwd] module to show the current working directory, and
+[git-info] to show git information.
 
 [gitster]: https://github.com/shashankmehta/dotfiles/blob/master/thesetup/zsh/.oh-my-zsh/custom/themes/gitster.zsh-theme
 ['detached HEAD' state]: http://gitfaq.org/articles/what-is-a-detached-head.html
-[git-info documentation]: https://github.com/zimfw/git-info/blob/master/README.md#theming
+[prompt-pwd module settings]: https://github.com/zimfw/prompt-pwd/blob/master/README.md#settings
+[git-info documentation]: https://github.com/zimfw/git-info/blob/master/README.md#settings
+[prompt-pwd]: https://github.com/zimfw/prompt-pwd
 [git-info]: https://github.com/zimfw/git-info

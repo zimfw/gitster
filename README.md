@@ -19,7 +19,7 @@ Advanced settings
 You can customize how the current working directory is shown with the
 [prompt-pwd module settings].
 
-The git indicators can customized by changing the following git-info module
+The git indicators can be customized by changing the following git-info module
 context formats:
 
 | Context name | Description       | Default format |
@@ -36,7 +36,7 @@ Use the following command to override a git-info context format:
 For detailed information about these and other git-info settings, check the
 [git-info documentation].
 
-These advanced settings must be overridden after where the theme is initialized.
+These advanced settings must be overridden after the theme is initialized.
 
 Requirements
 ------------

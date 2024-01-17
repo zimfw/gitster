@@ -22,12 +22,12 @@ You can customize how the current working directory is shown with the
 The git indicators can be customized by changing the following git-info module
 context formats:
 
-| Context name | Description       | Default format |
-| ------------ | ----------------- | -------------- |
-| branch       | Branch name       | `%b`           |
-| commit       | Commit short hash | `%c`           |
-| clean        | Clean state       | `%F{green}✓`   |
-| dirty        | Dirty state       | `%F{yellow}✗`  |
+| Context name | Description       | Default format      |
+| ------------ | ----------------- | ------------------- |
+| branch       | Branch name       | `%b`                |
+| commit       | Commit short hash | `%c`                |
+| clean        | Clean state       | `%F{green}%{%G✓%}`  |
+| dirty        | Dirty state       | `%F{yellow}%{%G✗%}` |
 
 Use the following command to override a git-info context format:
 
